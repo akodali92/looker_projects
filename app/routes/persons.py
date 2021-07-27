@@ -6,7 +6,6 @@ from app import app
 from ..models.persons import PersonModel
 
 
-
 @app.route("/persons")
 def persons():
     persons = PersonModel.query.all()

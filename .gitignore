@@ -2,4 +2,4 @@
 __pycache__
 data.db
 seed
-seed.py
+seed_data.py
