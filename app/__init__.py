@@ -16,4 +16,4 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
 # import routes
-from app.routes import index, persons
+from app.routes import index, persons, projects
