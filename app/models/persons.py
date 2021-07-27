@@ -11,10 +11,10 @@ class PersonModel(db.Model):
 
     # columns
     sk_person = db.Column(db.String, primary_key=True, default=default_uuid)
-    first_name = db.Column(db.String)
-    last_name = db.Column(db.String)
-    company = db.Column(db.String)
-    role = db.Column(db.String)
+    first_name = db.Column(db.String, nullable=False)
+    last_name = db.Column(db.String, nullable=False)
+    company = db.Column(db.String, nullable=False)
+    role = db.Column(db.String, nullable=False)
 
     full_name = column_property(first_name + " " + last_name)
     person_record = column_property(first_name + " " + last_name + " - " + company + ", " + role)
