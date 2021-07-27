@@ -9,7 +9,7 @@ from .shared.default_values import default_uuid
 class PersonModel(BaseMixin, db.Model):
 
     __tablename__ = 'persons'
-    __table_args__ = (db.UniqueConstraint('first_name', 'last_name', 'company', 'role', name='unique_person_record'),)
+    __table_args__ = (db.UniqueConstraint('first_name', 'last_name', 'company', 'role', 'email_address', name='unique_person_record'),)
 
     # columns
     sk_person = db.Column(db.String, primary_key=True, default=default_uuid)
