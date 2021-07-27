@@ -4,11 +4,33 @@
 
 <h1>People</h1>
 
-    <ul>
-    {% for person in persons %}
-        <li>{{ person.person_record}}</li>
-    {% endfor %}
-    </ul>
+    <table>
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Company</th>
+                <th>Role</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for person in persons %}
+            <tr>
+                <td>{{ person.first_name }}</td>
+                <td>{{ person.last_name }}</td>
+                <td>{{ person.company }}</td>
+                <td>{{ person.role }}</td>
+                <td>Edit Record</td>
+            </tr>
+            {% endfor %}
+                <tr>
+                    <td>Add a new First Name</td>
+                    <td>Add a new Last Name</td>
+                    <td>Add a new Company</td>
+                    <td>Add a new Role</td>
+                </tr>
+        </tbody>
+    </table>
 
 
 {% endblock content %}
