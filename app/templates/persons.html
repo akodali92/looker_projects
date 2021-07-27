@@ -21,15 +21,24 @@
                 <td>{{ person.company }}</td>
                 <td>{{ person.role }}</td>
                 <td>Edit Record</td>
+                <td>Delete Record</td>
             </tr>
             {% endfor %}
                 <tr>
-                    <td>Add a new First Name</td>
-                    <td>Add a new Last Name</td>
-                    <td>Add a new Company</td>
-                    <td>Add a new Role</td>
+                    <td>New First Name</td>
+                    <td>New Last Name</td>
+                    <td>New Company</td>
+                    <td>New Role</td>
+                    <td>Add Record</td>
                 </tr>
         </tbody>
+        <form action="{{ request.path }}/new" method="POST">
+            <input type="text" name="first_name" placeholder="First Name" />
+            <input type="text" name="last_name" placeholder="Last Name" />
+            <input type="text" name="company" placeholder="Company" />
+            <input type="text" name="role" placeholder="role" />
+            <input type="submit" value="Submit" />
+        </form>
     </table>
 
 
