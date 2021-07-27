@@ -1,5 +1,5 @@
 # python imports
-from flask import Flask
+from flask import Flask, render_template
 
 # project imports
 
@@ -9,8 +9,12 @@ app = Flask(__name__)
 
 # setup routes
 @app.route("/")
-def index():
-    return "Hello World"
+def home():
+    return render_template('home.html')
+
+@app.route("/about")
+def about():
+    return render_template('about.html')
 
 # run app
 if __name__ == '__main__':
