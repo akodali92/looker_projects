@@ -3,7 +3,7 @@ from sqlalchemy.orm import column_property
 
 # project imports
 from app import db
-from shared.base_mixin import BaseMixin
+from .shared.base_mixin import BaseMixin
 from .shared.default_values import default_uuid
 
 class PersonModel(BaseMixin, db.Model):
