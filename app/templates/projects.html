@@ -4,11 +4,13 @@
 
 <h1>Projects</h1>
 
+<form action="/projects/new" method="POST">
     <table>
         <thead>
             <tr>
                 <th>Project</th>
                 <th>Client</th>
+                <th>Service Line</th>
                 <th>Practice</th>
             </tr>
         </thead>
@@ -17,25 +19,36 @@
             <tr>
                 <td>{{ project.project }}</td>
                 <td>{{ project.client }}</td>
+                <td>{{ project.service_line }}</td>
                 <td>{{ project.practice }}</td>
                 <td>Edit Record</td>
                 <td>Delete Record</td>
             </tr>
             {% endfor %}
-                <tr>
-                    <td>New Project</td>
-                    <td>New Client</td>
-                    <td>New Practice</td>
-                    <td>Add Record</td>
-                </tr>
+            <tr>
+                <td>
+                    <input type="text" name="project" placeholder="Project" />
+                </td>
+                <td>
+                    <input type="text" name="client" placeholder="Client" />
+                </td>
+                <td>
+                    <input type="text" name="service_line" placeholder="Service Line" />
+                </td>
+                <td>
+                    <input type="text" name="practice" placeholder="Practice" />
+                </td>
+                <td>
+                    <input type="text" name="type" placeholder="Type" />
+                </td>
+                <td>
+                    <input type="submit" value="Add Project" />
+                </td>
+            </tr>     
         </tbody>
-        <form action="/projects/new" method="POST">
-            <input type="text" name="project" placeholder="Project" />
-            <input type="text" name="client" placeholder="Client" />
-            <input type="text" name="practice" placeholder="Practice" />
-            <input type="submit" value="Submit" />
-        </form>
     </table>
+</form>
+    
 
 
 {% endblock content %}
