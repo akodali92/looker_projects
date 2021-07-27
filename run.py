@@ -1,8 +1,9 @@
 # python imports
 
 # project imports
-from app import app
+from app import app, db
 
 # run app
 if __name__ == '__main__':
-    app.run(debug=True)
+    db.create_all()
+    app.run()

@@ -19,6 +19,8 @@ class PersonModel(db.Model):
     full_name = column_property(first_name + " " + last_name)
     person_record = column_property(first_name + " " + last_name + " - " + company + ", " + role)
 
+    db.UniqueConstraint(first_name, last_name, company, role)
+
 
     # print function
     def __repr__(self):
