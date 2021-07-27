@@ -17,4 +17,4 @@ app.config['SECRET_KEY'] = '123456'
 db = SQLAlchemy(app)
 
 # import routes
-from app import routes
+from app.routes import index, persons
