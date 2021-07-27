@@ -19,7 +19,7 @@ class ProjectModel(BaseMixin, db.Model):
     practice = db.Column(db.String, nullable=False)
     type = db.Column(db.String, nullable=False)
 
-    project_record = column_property(project + " - " + client + '(' + service_line + ': ' + practice + ')')
+    project_record = column_property(project + " - " + client + ' (' + service_line + ': ' + practice + ')')
 
 
     # print function

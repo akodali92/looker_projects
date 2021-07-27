@@ -21,3 +21,12 @@ def projects_new():
     except Exception as e:
         print(f"Not inserted: {e}")
     return redirect(url_for('projects'))
+
+@app.route("/projects/<sk_project>", methods=['POST'])
+def projects_project(sk_project):
+    # get method type
+    print(request.get_json)
+    # query for project
+    project = ProjectModel.query.get(sk_project)
+    print(project)
+    return redirect(url_for('projects'))  
