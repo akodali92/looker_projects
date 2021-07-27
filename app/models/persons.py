@@ -3,9 +3,10 @@ from sqlalchemy.orm import column_property
 
 # project imports
 from app import db
-from .default_values import default_uuid
+from shared.base_mixin import BaseMixin
+from .shared.default_values import default_uuid
 
-class PersonModel(db.Model):
+class PersonModel(BaseMixin, db.Model):
 
     __tablename__ = 'persons'
 
@@ -25,7 +26,3 @@ class PersonModel(db.Model):
     # print function
     def __repr__(self):
         return self.person_record
-
-    def save_to_db(self):
-        db.session.add(self)
-        db.session.commit()
