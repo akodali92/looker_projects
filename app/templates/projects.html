@@ -4,4 +4,38 @@
 
 <h1>Projects</h1>
 
+    <table>
+        <thead>
+            <tr>
+                <th>Project</th>
+                <th>Client</th>
+                <th>Practice</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for project in projects %}
+            <tr>
+                <td>{{ project.project }}</td>
+                <td>{{ project.client }}</td>
+                <td>{{ project.practice }}</td>
+                <td>Edit Record</td>
+                <td>Delete Record</td>
+            </tr>
+            {% endfor %}
+                <tr>
+                    <td>New Project</td>
+                    <td>New Client</td>
+                    <td>New Practice</td>
+                    <td>Add Record</td>
+                </tr>
+        </tbody>
+        <form action="/projects/new" method="POST">
+            <input type="text" name="project" placeholder="Project" />
+            <input type="text" name="client" placeholder="Client" />
+            <input type="text" name="practice" placeholder="Practice" />
+            <input type="submit" value="Submit" />
+        </form>
+    </table>
+
+
 {% endblock content %}
