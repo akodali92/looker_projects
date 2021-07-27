@@ -17,6 +17,7 @@ class PersonModel(BaseMixin, db.Model):
     last_name = db.Column(db.String, nullable=False)
     company = db.Column(db.String, nullable=False)
     role = db.Column(db.String, nullable=False)
+    email_address = db.Column(db.String, nullable=False)
 
     full_name = column_property(first_name + " " + last_name)
     person_record = column_property(first_name + " " + last_name + " - " + company + ", " + role)

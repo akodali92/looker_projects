@@ -20,6 +20,7 @@
                 <td>{{ person.last_name }}</td>
                 <td>{{ person.company }}</td>
                 <td>{{ person.role }}</td>
+                <td>{{ person.email_address }}</td>
                 <td>Edit Record</td>
                 <td>Delete Record</td>
             </tr>
@@ -29,6 +30,7 @@
                     <td>New Last Name</td>
                     <td>New Company</td>
                     <td>New Role</td>
+                    <td>New Email Address</td>
                     <td>Add Record</td>
                 </tr>
         </tbody>
@@ -36,7 +38,8 @@
             <input type="text" name="first_name" placeholder="First Name" />
             <input type="text" name="last_name" placeholder="Last Name" />
             <input type="text" name="company" placeholder="Company" />
-            <input type="text" name="role" placeholder="role" />
+            <input type="text" name="role" placeholder="Role" />
+            <input type="text" name="email_address" placeholder="Email Address" />
             <input type="submit" value="Submit" />
         </form>
     </table>
