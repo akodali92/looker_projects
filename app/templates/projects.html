@@ -11,6 +11,7 @@
                 <th>Project</th>
                 <th>Client</th>
                 <th>Billable?</th>
+                <th>Estimated Hours</th>
                 <th>Service Line</th>
                 <th>Practice</th>
                 <th>Type</th>
@@ -29,6 +30,7 @@
                         {% endif %}
                     />
                 </td>
+                <td>{{ project.estimated_hours }}</td>
                 <td>{{ project.service_line }}</td>
                 <td>{{ project.practice }}</td>
                 <td>{{ project.type }}</td>
@@ -50,6 +52,9 @@
                     </td>
                     <td>
                         <input type="checkbox" name="is_billable" />
+                    </td>
+                    <td>
+                        <input type="number" name="estimated_hours" placeholder="Estimated Hours" />
                     </td>
                     <td>
                         <input type="text" name="service_line" placeholder="Service Line" />

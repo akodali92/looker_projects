@@ -19,6 +19,7 @@ class ProjectModel(BaseMixin, db.Model):
     service_line = db.Column(db.String, nullable=False)
     practice = db.Column(db.String, nullable=False)
     type = db.Column(db.String, nullable=False)
+    estimated_hours = db.Column(db.Float)
 
     project_record = column_property(project + " - " + client + ' (' + service_line + ': ' + practice + ')')
 
