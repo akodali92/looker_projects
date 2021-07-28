@@ -10,6 +10,7 @@
             <tr>
                 <th>Project</th>
                 <th>Client</th>
+                <th>Billable?</th>
                 <th>Service Line</th>
                 <th>Practice</th>
                 <th>Type</th>
@@ -20,6 +21,14 @@
             <tr>
                 <td>{{ project.project }}</td>
                 <td>{{ project.client }}</td>
+                <td>
+                    <input 
+                        type="checkbox"
+                        {% if project.is_billable %}
+                        checked
+                        {% endif %}
+                    />
+                </td>
                 <td>{{ project.service_line }}</td>
                 <td>{{ project.practice }}</td>
                 <td>{{ project.type }}</td>
@@ -38,6 +47,9 @@
                     </td>
                     <td>
                         <input type="text" name="client" placeholder="Client" />
+                    </td>
+                    <td>
+                        <input type="checkbox" name="is_billable" />
                     </td>
                     <td>
                         <input type="text" name="service_line" placeholder="Service Line" />

@@ -15,6 +15,7 @@ class ProjectModel(BaseMixin, db.Model):
     sk_project = db.Column(db.String, primary_key=True, default=default_uuid)
     project = db.Column(db.String, nullable=False)
     client = db.Column(db.String, nullable=False)
+    is_billable = db.Column(db.Boolean, default=False)
     service_line = db.Column(db.String, nullable=False)
     practice = db.Column(db.String, nullable=False)
     type = db.Column(db.String, nullable=False)
