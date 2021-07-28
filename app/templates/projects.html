@@ -20,8 +20,13 @@
         <tbody>
             {% for project in projects %}
             <tr>
-                <td>{{ project.project }}</td>
-                <td>{{ project.client }}</td>
+                <!-- <td>{{ project.project }}</td> -->
+                <td>
+                    <input type="text" name="project" value={{ project.project }} />
+                </td>
+                <td>
+                    <input type="text" name="client" value={{ project.client }} />
+                </td>
                 <td>
                     <input 
                         type="checkbox"
@@ -30,10 +35,18 @@
                         {% endif %}
                     />
                 </td>
-                <td>{{ project.estimated_hours }}</td>
-                <td>{{ project.service_line }}</td>
-                <td>{{ project.practice }}</td>
-                <td>{{ project.type }}</td>
+                <td>
+                    <input type="number" name="estimated_hours" value={{ project.estimated_hours }} />
+                </td>
+                <td>
+                    <input type="text" name="service_line" value={{ project.service_line }} />
+                </td>
+                <td>
+                    <input type="text" name="practice" value={{ project.practice }} />
+                </td>
+                <td>
+                    <input type="text" name="type" value={{ project.type }} />
+                </td>
                 <td>
                     <form action="/projects/{{ project.sk_project }}" method="POST">
                         <input type="submit" name="PUT" value="Edit" />
@@ -51,6 +64,7 @@
                         <input type="text" name="client" placeholder="Client" />
                     </td>
                     <td>
+                        Billable?
                         <input type="checkbox" name="is_billable" />
                     </td>
                     <td>
