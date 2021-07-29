@@ -17,3 +17,6 @@ db = SQLAlchemy(app)
 
 # import routes
 from app.routes import index, persons, projects, events
+
+# import models
+from app.models import persons, projects, events, dates
