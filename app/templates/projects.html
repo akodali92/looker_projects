@@ -20,7 +20,6 @@
         <tbody>
             {% for project in projects %}
             <tr>
-                <!-- <td>{{ project.project }}</td> -->
                 <td>
                     <input type="text" name="project" value={{ project.project }} />
                 </td>
@@ -55,7 +54,7 @@
                 </td>
             </tr>
             {% endfor %}
-            <form action="/projects/new" method="POST">
+            <form action="{{ url_for('projects_new') }}" method="POST">
                 <tr>
                     <td>
                         <input type="text" name="project" placeholder="Project" />
