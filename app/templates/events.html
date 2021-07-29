@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h1>Events</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Event</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for event in events %}
+            <tr>
+                <td>{{ event.event_name }}</td>
+            </tr>
+            {% endfor %}
+                <tr>
+                    <td>New Event</td>
+                </tr>
+        </tbody>
+    </table>
+
+
+{% endblock content %}
