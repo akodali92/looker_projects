@@ -12,8 +12,8 @@ class EventModel(BaseMixin, db.Model):
 
     # columns
     sk_event = db.Column(db.String, primary_key=True, default=default_uuid)
-    event_name = db.Column(db.String, unique=True, nullable=False)
+    event = db.Column(db.String, unique=True, nullable=False)
 
     # print function
     def __repr__(self):
-        return self.event_name
+        return self.event
