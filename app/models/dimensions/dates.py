@@ -2,13 +2,13 @@
 
 # project imports
 from app import db
-from .shared.base_mixin import BaseMixin
-from .shared.default_values import default_uuid
+from ..shared.base_mixin import BaseMixin
+from ..shared.default_values import default_uuid
 
 
-class DateModel(BaseMixin, db.Model):
+class DateDimension(BaseMixin, db.Model):
 
-    __tablename__ = 'dates'
+    __tablename__ = 'date_dimension'
 
     # columns
     sk_date = db.Column(db.String, primary_key=True, default=default_uuid)

@@ -3,18 +3,18 @@ from flask import redirect, render_template, request, url_for
 
 # project imports
 from app import app
-from ..models.projects import ProjectModel
+from ..models.dimensions.projects import ProjectDimension
 
 
 @app.route("/projects")
 def projects():
-    projects = ProjectModel.query.all()
+    projects = ProjectDimension.query.all()
     return render_template('projects.html', projects=projects)
 
 @app.route("/projects/new", methods=['POST'])
 def projects_new():
     form_dict = dict(request.form)
-    project_record = ProjectModel(**form_dict)
+    project_record = ProjectDimension(**form_dict)
     try:
         project_record.save_to_db()
         print(f"Inserted: {project_record.sk_project}")
@@ -27,6 +27,6 @@ def projects_project(sk_project):
     # get method type
     print(request.get_json)
     # query for project
-    project = ProjectModel.query.get(sk_project)
+    project = ProjectDimension.query.get(sk_project)
     print(project)
     return redirect(url_for('projects'))  

@@ -3,12 +3,12 @@ from sqlalchemy.orm import column_property
 
 # project imports
 from app import db
-from .shared.base_mixin import BaseMixin
-from .shared.default_values import default_uuid
+from ..shared.base_mixin import BaseMixin
+from ..shared.default_values import default_uuid
 
-class PersonModel(BaseMixin, db.Model):
+class PersonDimension(BaseMixin, db.Model):
 
-    __tablename__ = 'persons'
+    __tablename__ = 'person_dimension'
     __table_args__ = (db.UniqueConstraint('first_name', 'last_name', 'company', 'role', 'email_address', name='unique_person_record'),)
 
     # columns

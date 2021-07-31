@@ -3,10 +3,10 @@ from flask import render_template
 
 # project imports
 from app import app
-from ..models.events import EventModel
+from ..models.dimensions.events import EventDimension
 
 
 @app.route("/events")
 def events():
-    events = EventModel.query.all()
+    events = EventDimension.query.all()
     return render_template('events.html', events=events)

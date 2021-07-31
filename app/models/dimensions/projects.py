@@ -3,12 +3,12 @@ from sqlalchemy.orm import column_property
 
 # project imports
 from app import db
-from .shared.base_mixin import BaseMixin
-from .shared.default_values import default_uuid
+from ..shared.base_mixin import BaseMixin
+from ..shared.default_values import default_uuid
 
-class ProjectModel(BaseMixin, db.Model):
+class ProjectDimension(BaseMixin, db.Model):
 
-    __tablename__ = 'projects'
+    __tablename__ = 'project_dimension'
     __table_args__ = (db.UniqueConstraint('project', 'client', 'service_line', 'practice', name='unique_project_record'),)
 
     # columns
