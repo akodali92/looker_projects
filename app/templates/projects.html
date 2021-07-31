@@ -21,36 +21,29 @@
             {% for project in projects %}
             <tr>
                 <td>
-                    <input type="text" name="project" value={{ project.project }} />
+                   <a href="/projects/{{ project.sk_project }}">{{ project.project }}</a>
                 </td>
                 <td>
-                    <input type="text" name="client" value={{ project.client }} />
+                   {{ project.client }}
                 </td>
                 <td>
-                    <input 
-                        type="checkbox"
-                        {% if project.is_billable %}
-                        checked
-                        {% endif %}
-                    />
+                   {{ project.is_billable }}
+                   
                 </td>
                 <td>
-                    <input type="number" name="estimated_hours" value={{ project.estimated_hours }} />
+                   {{ project.estimated_hours }}
                 </td>
                 <td>
-                    <input type="text" name="service_line" value={{ project.service_line }} />
+                  {{ project.service_line }}
                 </td>
                 <td>
-                    <input type="text" name="practice" value={{ project.practice }} />
+                  {{ project.practice }}
                 </td>
                 <td>
-                    <input type="text" name="type" value={{ project.type }} />
+                   {{ project.type }}
                 </td>
                 <td>
-                    <form action="/projects/{{ project.sk_project }}" method="POST">
-                        <input type="submit" name="PUT" value="Edit" />
-                        <input type="submit" name="DELETE" value="Delete" />
-                    </form>
+                  EDIT PROJECT | DELETE PROJECT
                 </td>
             </tr>
             {% endfor %}

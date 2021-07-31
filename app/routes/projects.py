@@ -22,11 +22,14 @@ def projects_new():
         print(f"Not inserted: {e}")
     return redirect(url_for('projects'))
 
-@app.route("/projects/<sk_project>", methods=['POST'])
+@app.route("/projects/<sk_project>", methods=['GET', 'POST'])
 def projects_project(sk_project):
-    # get method type
-    print(request.get_json)
-    # query for project
     project = ProjectDimension.query.get(sk_project)
-    print(project)
-    return redirect(url_for('projects'))  
+    if request.method == 'GET':
+        return render_template('project.html', project=project)
+    # # get method type
+    # print(request.get_json)
+    # # query for project
+    # project = ProjectDimension.query.get(sk_project)
+    # print(project)
+    # return redirect(url_for('projects'))
