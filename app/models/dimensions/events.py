@@ -13,6 +13,7 @@ class EventDimension(BaseMixin, db.Model):
     # columns
     sk_event = db.Column(db.String, primary_key=True, default=default_uuid)
     event = db.Column(db.String, unique=True, nullable=False)
+    event_type = db.Column(db.String)
 
     # print function
     def __repr__(self):
