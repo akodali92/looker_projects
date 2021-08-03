@@ -10,7 +10,7 @@ class DateDimension(BaseMixin, db.Model):
     __tablename__ = 'date_dimension'
 
     # columns
-    sk_date = db.Column(db.String, primary_key=True)
+    sk_date = db.Column(db.Integer, primary_key=True)
     date = db.Column(db.Date, unique=True, nullable=False)
 
     # print function
