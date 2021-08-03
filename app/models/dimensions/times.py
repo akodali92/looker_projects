@@ -10,7 +10,7 @@ class TimeDimension(BaseMixin, db.Model):
     __tablename__ = 'time_dimension'
 
     # columns
-    sk_time = db.Column(db.String, primary_key=True)
+    sk_time = db.Column(db.Integer, primary_key=True)
     time = db.Column(db.Time, unique=True, nullable=False)
 
     # print function
