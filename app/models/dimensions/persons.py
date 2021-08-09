@@ -4,7 +4,6 @@ from sqlalchemy.orm import column_property
 # project imports
 from app import db
 from ..shared.base_mixin import BaseMixin
-from ..shared.default_values import default_uuid
 
 class PersonDimension(BaseMixin, db.Model):
 
@@ -12,7 +11,7 @@ class PersonDimension(BaseMixin, db.Model):
     __table_args__ = (db.UniqueConstraint('first_name', 'last_name', 'company', 'role', 'email_address', name='unique_person_record'),)
 
     # columns
-    sk_person = db.Column(db.String, primary_key=True, default=default_uuid)
+    sk_person = db.Column(db.Integer, primary_key=True)
     first_name = db.Column(db.String, nullable=False)
     last_name = db.Column(db.String, nullable=False)
     company = db.Column(db.String, nullable=False)

@@ -3,7 +3,6 @@
 # project imports
 from app import db
 from ..shared.base_mixin import BaseMixin
-from ..shared.default_values import default_uuid
 
 
 class EventDimension(BaseMixin, db.Model):
@@ -11,7 +10,7 @@ class EventDimension(BaseMixin, db.Model):
     __tablename__ = 'event_dimension'
 
     # columns
-    sk_event = db.Column(db.String, primary_key=True, default=default_uuid)
+    sk_event = db.Column(db.Integer, primary_key=True)
     event = db.Column(db.String, unique=True, nullable=False)
     event_type = db.Column(db.String)
 

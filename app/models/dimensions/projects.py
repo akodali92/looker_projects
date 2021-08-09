@@ -4,7 +4,6 @@ from sqlalchemy.orm import column_property
 # project imports
 from app import db
 from ..shared.base_mixin import BaseMixin
-from ..shared.default_values import default_uuid
 
 class ProjectDimension(BaseMixin, db.Model):
 
@@ -12,7 +11,7 @@ class ProjectDimension(BaseMixin, db.Model):
     __table_args__ = (db.UniqueConstraint('project', 'client', 'service_line', 'practice', name='unique_project_record'),)
 
     # columns
-    sk_project = db.Column(db.String, primary_key=True, default=default_uuid)
+    sk_project = db.Column(db.Integer, primary_key=True)
     project = db.Column(db.String, nullable=False)
     client = db.Column(db.String, nullable=False)
     is_billable = db.Column(db.Boolean, default=False)
